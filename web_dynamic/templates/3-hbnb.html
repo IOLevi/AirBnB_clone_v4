@@ -10,7 +10,7 @@
 	<title>Holberton AirBnB</title>
 	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 
-	<script type="text/javascript" src="/static/scripts/2-hbnb.js"></script>
+	<script type="text/javascript" src="/static/scripts/3-hbnb.js"></script>
 	<!-- FAVICON -->
 
 	<link rel="shortcut icon" href="{{ url_for('static', filename='images/icon.png') + '?' + cache_id|string }}">
@@ -78,7 +78,9 @@
 					<ul class="popover">
 						{% for amenity in amens|sort(attribute='name') %}
 						<LI>
-							<INPUT type="checkbox" style='margin-right: 10px' data-id="{{ amenity.id }}" data-name="{{ amenity.name }}">{{ amenity.name }}</LI>
+							<INPUT type="checkbox" style='margin-right: 10px' data-id="{{ amenity.id }}" data-name="{{ amenity.name }}">{{ amenity.name
+							}}
+						</LI>
 						{% endfor %}
 					</ul>
 				</div>
@@ -98,24 +100,10 @@
 	     ********************** -->
 
 
-					<!-- **********************
+				<!-- **********************
 		 USER
 		 **********************  -->
 
-					<div class="user">
-
-						<strong>Owner: {{ users[place.user_id] }}</strong>
-
-					</div>
-					<div class="description">
-
-						{{ place.description }}
-
-					</div>
-
-				</article> <!-- End 1 PLACE Article -->
-
-				{% endfor %}
 
 			</section>
 		</div>
