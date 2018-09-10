@@ -13,9 +13,9 @@ $(document).ready(() => {
     mtotal.sort();
     $('.amenities h4').text(mtotal.join(', '));
   });
-  $.get('http://0.0.0.0:5001/api/v1/status',
+  $.get('http://localhost:5001/api/v1/status',
     function (data, textStatus) {
-      if (textStatus === '200') {
+      if (data['status'] === 'OK') {
         $('DIV#api_status').addClass('available');
       } else {
         $('DIV#api_status').removeClass('available');
